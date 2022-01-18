@@ -51,7 +51,7 @@ function Start(props) {
                         {props.serviceData.services.map((service, index) => (
 
 
-                            <div className="column is-one-third-widescreen flex-portrait-4 is-half">
+                            <div key={index} className="column is-one-third-widescreen flex-portrait-4 is-half">
                                 <div className="flex-card is-feature padding-5 first-start-feature service-cards">
                                     {/* Icon */}
                                     <div className="is-cover is-relative" style={{
