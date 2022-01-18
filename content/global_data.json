@@ -1,0 +1,14 @@
+{
+  "contact": {
+    "phone": "1234567890",
+    "phonepretty": "123.456.7890",
+    "email": "user@gmail.com",
+    "address1": "Las Vegas, NV 85295",
+    "address2": "Las Vegas, NV 85295",
+    "mapLink": "https://goo.gl/maps/39WMsnSFPS2Ti8gk8"
+  },
+  "social": {
+    "fb": "https://www.facebook.com",
+    "insta": "https://www.instagram.com"
+  }
+}

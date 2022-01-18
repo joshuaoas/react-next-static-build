@@ -1,0 +1,117 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: public/static/img
+public_folder: static/img
+show_preview_links: false
+logo_url: https://image.png
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '_'
+collections:
+  - name: 'pages'
+    label: 'Pages'
+    editor:
+      preview: false
+    files:
+      - label: 'Home Page'
+        name: 'home'
+        file: 'content/home.md'
+        
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Page Search Description', name: 'pageDesc', widget: 'text', hint: This is not printed visibly on the page. It is used for SEO }
+          - {label: Home Banner, name: homebanner, widget: object, fields: [{label: Home Banner Image, name: homeBannerImage, widget: image, hint: This is the background image}, {label: Home Banner Logo, name: homeBannerLogo, widget: image, hint: this is the logo in the top banner},{label: Home Banner Subtitle, name: homeBannerSubtitle, widget: string}, {label: Home Banner Tagline, name: homeBannerTagline, widget: string}, {label: CTA 1 title, name: cta1title, widget: string, hint: Phone number is set in general info}, {label: CTA 2 title, name: cta2title, widget: string}, {label: CTA 2 target page, name: cta2target, widget: string} ]}
+          - {label: Services Section, name: servicesSection, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Subtitle, name: subtitle, widget: text}, {label: Services, name: services, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Subtitle, name: subbtitle, widget: text}, {label: Image, name: image, widget: image, hint: This is the background image}, {label: Icon, name: icon, widget: hidden, default: GiPaintRoller,}, {label: Link Text, name: linkText, widget: string}, {label: Link Target, name: linkTarget, widget: string} ]}]}
+          - {label: Features, name: features, widget: object, fields: [ 
+            {label: Feature 1, name: feature1, widget: object, fields: [ 
+              { label: "Feature 1 Image", name: "feature1Image", widget: "image"},
+              { label: "Feature 1 Headline", name: "feature1Headline", widget: "string"},
+              { label: "Feature 1 Copy", name: "feature1Copy", widget: "markdown"},
+            ]},
+            {label: Feature 2, name: feature2, widget: object, fields: [ 
+              { label: "Feature 2 Image", name: "feature2Image", widget: "image"},
+              { label: "Feature 2 Headline", name: "feature2Headline", widget: "string"},
+              { label: "Feature 2 Copy", name: "feature2Copy", widget: "markdown"},
+            ]}
+          ]}
+          - {label: Testimonials, name: testimonials, widget: list, fields: [ {label: Quote, name: quote, widget: text}, {label: Customer Name, name: customer, widget: string},  ]}
+  - label: 'Services'
+    name: 'serrvices'
+    editor:
+      preview: false
+    folder: 'content/services'
+    create: true
+    identifier_field: slug
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Page Search Description', name: 'pageDesc', widget: 'text' }
+      - widget: hidden
+        name: slug
+        label: Slug
+        required: true
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$','A slug can have no spaces or special characters']
+        hint: >-
+          The post URL (do not include folder or file extension, it is also hyphenated example: paintworks-az-painting-company)
+      - {
+          label: 'Featured Image',
+          name: 'featuredimage',
+          widget: 'image',
+          hint: "These images should be compressed to 72 DPI, at around 1200px wide too keep the page load speed down. Height dooesn't matter.",
+          required: true,
+        }
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string', required: true } 
+      - {label: CTA 1 title, name: cta1title, widget: string, hint: Phone number is set in general info}
+      - {label: CTA 2 title, name: cta2title, widget: string}
+      - {label: CTA 2 target page, name: cta2target, widget: string}
+      - {label: Service Overview, name: serviceOverview, widget: object, fields: [ {label: Title, name: heading, widget: string},{label: Subtitle, name: subtitle, widget: text},{label: Content Title, name: contentTitle, widget: text},{label: Body Copy, name: contentBody, widget: markdown} ]} 
+      - { label: Features, name: features, widget: list, fields: [
+            { label: Feature, name: feature, widget: string, required: true, hint: 'Features are required.' },
+      ]}  
+      - {
+          label: Service Images,
+          name: aptimages,
+          widget: object,
+          fields:
+            [
+              {
+                label: Images,
+                name: images,
+                widget: list,
+                hint: "These images are required and should be compressed to 72 DPI, at around 800px wide too keep the page load speed down. Height dooesn't matter.",
+                fields:
+                  [
+                    { label: Image, name: image, widget: image, required: true },
+                    { label: Text, name: text, widget: text, required: true },
+                  ],
+              },
+            ],
+        }
+      - { label: 'Contact Form Copy', name: 'formCopy', widget: 'text', required: true }
+  - name: "generalinfo"
+    label: "General Info"
+    delete: false
+    preview: false
+    editor:
+      preview: false
+    files:
+      - file: 'content/global_data.json'
+        label: "Contact & Social"
+        name: "contactandsocial"
+        fields:
+          - {label: Contact, name: contact, widget: object, fields: [
+              { label: 'Phone', name: 'phone', widget: 'string' },
+              { label: 'Phone Pretty Display', name: 'phonepretty', widget: 'string' },
+              { label: 'Email', name: 'email', widget: 'string' },
+              { label: 'address1', name: 'address1', widget: 'string' },
+              { label: 'address2', name: 'address2', widget: 'string' },
+          ]}
+          - {label: Social, name: social, widget: object, fields: [
+              { label: 'Facebook', name: 'fb', widget: 'string' },
+              { label: 'Instagram', name: 'insta', widget: 'string' },
+          ]}
+
+      
+
