@@ -34,9 +34,6 @@ const Service = ({ aptpost }) => {
 
     const { html, attributes } = aptpost
 
-
-    //console.log(attributes.aptimages.images);
-
     return (
         <>
             <Head>
@@ -91,72 +88,6 @@ const Service = ({ aptpost }) => {
                     </motion.div>
 
 
-                    { /*
-                    {attributes.features.length ? (
-                        <motion.div
-                            style={{ originY: 1 }}
-                            initial="hidden"
-                            animate="visible"
-                            variants={{
-                                hidden: {
-                                    scale: 1,
-                                    opacity: 0,
-                                },
-                                visible: {
-                                    scale: 1,
-                                    opacity: 1,
-                                    transition: {
-                                        delay: 0.7,
-                                    },
-                                },
-                            }}
-                        >
-                            <APTFeatures features={attributes.features} />
-                        </motion.div>
-                    ) : null}
-
-                    <motion.div
-                        style={{ originY: 1 }}
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            hidden: {
-                                scale: 1,
-                                opacity: 0,
-                            },
-                            visible: {
-                                scale: 1,
-                                opacity: 1,
-                                transition: {
-                                    delay: 0.8,
-                                },
-                            },
-                        }}
-                    >
-                        <APTFloorPlan image={attributes.layoutimage} />
-                    </motion.div>
-                    <motion.div
-                        style={{ originY: 1 }}
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            hidden: {
-                                scale: 1,
-                                opacity: 0,
-                            },
-                            visible: {
-                                scale: 1,
-                                opacity: 1,
-                                transition: {
-                                    delay: 0.9,
-                                },
-                            },
-                        }}
-                    >
-                        <APTTour walkthrough={attributes.walkthrough} />
-                    </motion.div>
-                    */}
-
                     <motion.div
                         style={{ originY: 1 }}
                         initial="hidden"
@@ -179,13 +110,8 @@ const Service = ({ aptpost }) => {
 
 
                         <ContactForm2 formCopy={attributes.formCopy} />
-                        {/*
-                        <LaundryBanner title={attributes.laundry.laundrytitle} body={attributes.laundry.laundrybody} image={attributes.laundry.laundryimage} />
-                         */}
+
                     </motion.div>
-                    {/*
-                <PostContent content={content} />
-                */}
                 </section >
 
 
