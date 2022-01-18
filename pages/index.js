@@ -35,7 +35,7 @@ function Home({ postsList }) {
   return (
     < >
       <Head>
-        <title>{attributes.title} | Paint</title>
+        <title>{attributes.title} | Site</title>
         <meta name="description" content={attributes.pageDesc} />
       </Head>
       <Layout style={{ overflow: "hidden" }}>

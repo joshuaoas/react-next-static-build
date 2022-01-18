@@ -40,7 +40,7 @@ const Service = ({ aptpost }) => {
     return (
         <>
             <Head>
-                <title>{attributes.title} | PaintWorks</title>
+                <title>{attributes.title} | Site</title>
                 <meta name="description" content={attributes.pageDesc} />
             </Head>
             <Layout>

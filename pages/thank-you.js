@@ -15,8 +15,8 @@ const thanks = () => {
     return (
         <>
             <Head>
-                <title>Thank You | Skylight Aparments</title>
-                <meta name="description" content="Skylight Apartments on State street in Madison, WI feature sizable floorplans, as well as easy access to campus and unique shopping. It is a fantastic, secure, and meticulously kept property for off-campus UW Madison student living." />
+                <title>Thank You | Site</title>
+                <meta name="description" content="" />
             </Head>
             <Layout>
                 <div id="content-main-wrap" className="is-clearfix">

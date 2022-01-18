@@ -18,7 +18,7 @@ const NotFoundPage = () => {
     return (
         <>
             <Head>
-                <title>404 | Paint</title>
+                <title>404 | Site</title>
                 <meta name="description" content="" />
             </Head>
             <Layout>
